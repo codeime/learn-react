@@ -30,7 +30,7 @@ export default class Header extends React.Component {
             }
         };
         return (
-            <header onClick={this.switchHeader.bind(this)} style={styleComponentHeader.header} className={"smallFontSize"}>
+            <header style={styleComponentHeader.header} className={"smallFontSize"}>
                 <h1>这里是顶部</h1>
             </header>
         )

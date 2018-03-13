@@ -4,7 +4,7 @@ import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 import Body from "./components/indexBody.jsx"
 
-class Index extends React.Component {
+export default class Index extends React.Component {
     componentWillMount() {
         console.log("===================这是index页面开始加载===================")
     };
@@ -24,7 +24,3 @@ class Index extends React.Component {
         )
     }
 }
-ReactDOM.render(
-    <Index />,
-    document.getElementById("example")
-)

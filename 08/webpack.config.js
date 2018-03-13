@@ -1,13 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
 
+var debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
-    context: __dirname + '/src',
-    entry: "./js/index.jsx",
+    context: path.join(__dirname),
+    devtool: debug ? "inline-sourcemap" : null,
+    entry: "./src/js/root.jsx",
     output: {
-        path: __dirname + "/src/",
-        filename: 'bundle.js'
+        path: __dirname,
+        filename: './src/bundle.js'
     },
     module: {
         rules: [{
