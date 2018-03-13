@@ -3,12 +3,12 @@ import React from "react";
 
 
 
-export default class Header extends React.Component {
+export default class Footer extends React.Component {
     render() {
         return (
-            <header>
-                <h1>这里是底部</h1>
-            </header>
+            <footer>
+                <h1>这里是页面的的底部</h1>
+            </footer>
         )
     }
 
