@@ -27,13 +27,19 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.jsx?$/,
-                exclude: /(node_modules)/,
+                // exclude: /(node_modules)/,
 
                 loader: 'babel-loader',
+                exclude: function (path) {
+                    var isNpmModule = !!path.match(/(node_modules)/);
+                    return isNpmModule;
+                },
                 query: {
                     presets: ['react', 'es2015'],
 
-                }
+                },
+
+
 
             },
             {
