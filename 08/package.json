@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development && webpack --config webpack.config.js  --mode development --watch",
+    "devServer": "webpack-dev-server --content-Base src  --inline --hot",
     "build": "cross-env NODE_ENV=production  && webpack --config webpack.config.js  --mode prodction"
   },
   "author": "",
