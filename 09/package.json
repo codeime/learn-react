@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development && webpack --config webpack.config.js  --mode development --watch",
-    "devServer": "webpack-dev-server --content-Base src  --inline --hot --mode development",
+    "devServer": "webpack-dev-server --content-Base src  --port 3000 --inline --hot --mode development",
     "build": "cross-env NODE_ENV=production  && webpack --config webpack.config.js  --mode prodction"
   },
   "author": "",
@@ -17,7 +17,8 @@
     "react-dom": "^16.2.0",
     "react-mixin": "^4.0.0",
     "react-responsive": "^4.0.5",
-    "react-router": "^4.2.0"
+    "react-router": "^4.2.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
