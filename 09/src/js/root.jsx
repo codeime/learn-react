@@ -10,6 +10,11 @@ import { Router, Route, hashHistory } from 'react-router';
 import PCIndex from "./components/pc_index.jsx";
 import MobileIndex from "./components/mobile_index.jsx";
 
+
+
+
+
+
 class Root extends React.Component {
     render() {
         return (
