@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from "antd";
-import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
+
 
 import MediaQuery from "react-responsive";
 

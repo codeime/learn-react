@@ -1,5 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
+
 
 var debug = process.env.NODE_ENV !== "production";
 
@@ -48,7 +52,24 @@ module.exports = {
                 //?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]
             }
         ]
-    }
+    },
+    devServer: {
+        host: "localhost",
+        port: "3000",
+        open: true,
+        contentBase: "./",
+        overlay: true
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true
+        }),
+        /*  new OpenBrowserPlugin({
+             url: "http://localhost:3000"
+         }) */
+    ]
 
 
 }
