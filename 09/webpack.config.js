@@ -12,7 +12,7 @@ module.exports = {
     devtool: debug ? "inline-sourcemap" : null,
     entry: "./src/js/root.jsx",
     output: {
-        path: __dirname,
+        path: path.resolve(__dirname,'build'),
         filename: './src/bundle.js'
     },
     optimization: {
@@ -32,7 +32,6 @@ module.exports = {
         rules: [{
                 test: /\.jsx?$/,
                 // exclude: /(node_modules)/,
-
                 loader: 'babel-loader',
                 exclude: function (path) {
                     var isNpmModule = !!path.match(/(node_modules)/);
@@ -42,9 +41,6 @@ module.exports = {
                     presets: ['react', 'es2015'],
 
                 },
-
-
-
             },
             {
                 test: /\.css?$/,
@@ -57,7 +53,7 @@ module.exports = {
         host: "localhost",
         port: "3000",
         open: true,
-        contentBase: "./",
+        contentBase: path.resolve(__dirname,'build'),
         overlay: true
     },
     plugins: [
