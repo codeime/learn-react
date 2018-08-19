@@ -16,7 +16,6 @@ module.exports = {
         filename: './src/bundle.js'
     },
     optimization: {
-
         splitChunks: {
             cacheGroups: {
                 commons: {
