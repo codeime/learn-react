@@ -26,11 +26,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  * https://webpack.js.org/plugins/split-chunks-plugin/
  *
  */
+console.log(process.env.NODE_ENV);
+
 var devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
+    
     entry: path.resolve(__dirname, '../src/index.jsx'),
-    devtool: devMode ? "inline-sourcemap" : null,
+
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist')
