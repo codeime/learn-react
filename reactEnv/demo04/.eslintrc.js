@@ -1,19 +1,30 @@
 module.exports = {
     root: true,
-    parser: "babel-eslint",
-    parserOptions: {
-
-    },
     env: {
         browser: true,
+        es6: true,
+        commonjs: true
     },
+    parser: "babel-eslint",
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+            experimentalObjectRestSpread: true,
+            arrowFunctions: true,
+            classes: true,
+            modules: true,
+            defaultParams: true
+        },
+        ecmaVersion: 7,
+        sourceType: "module"
+    },
+
     extends: [
-        // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-        'standard'
-    ],
-    // required to lint *.vue files
-    plugins: [
         'react'
+    ],
+
+    plugins: [
+        'plugin:react/recommended'
     ],
     // add your custom rules here
     rules: {
@@ -56,5 +67,11 @@ module.exports = {
         /* 分号 */
         /*  "semi": 1 */
 
+    },
+    settings: {
+        "import/ignore": [
+            "node_modules",
+            "dist"
+        ]
     }
 }
