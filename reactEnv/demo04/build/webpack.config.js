@@ -1,7 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /*
  * We've enabled MiniCssExtractPlugin for you. This allows your app to
@@ -26,12 +27,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  * https://webpack.js.org/plugins/split-chunks-plugin/
  *
  */
-console.log(process.env.NODE_ENV);
+let config = {
 
-var devMode = process.env.NODE_ENV !== "production";
-
-module.exports = {
-    
     entry: path.resolve(__dirname, '../src/index.jsx'),
 
     output: {
@@ -43,24 +40,11 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.(js|jsx)$/,
-                include: [path.resolve(__dirname, '../src')],
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.(less|css)$/,
-                use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'less-loader'
-                ],
-                include: [path.resolve(__dirname, '../src')],
-            }
-        ]
+            test: /\.(js|jsx)$/,
+            include: [path.resolve(__dirname, '../src')],
+            loader: 'babel-loader'
+        }]
     },
-
-    // mode: 'production',
-
     optimization: {
         splitChunks: {
             cacheGroups: {
@@ -84,15 +68,55 @@ module.exports = {
             minSize: 30000,
             name: false
         }
+
     },
     plugins: [
         new htmlWebpackPlugin({
             template: path.resolve(__dirname, '../index.html')
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].[contenthash].css"
         })
-    ]
+    ],
 
+};
+
+module.exports = (env, argv) => {
+    if(argv.mode == 'production') {
+
+        config.module.rules.push({
+            test: /\.(less|css)$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'less-loader'
+            ],
+            include: [path.resolve(__dirname, '../src')],
+        });
+        config.optimization.minimizer = [new UglifyJSPlugin()];
+        config.plugins = config.plugins.concat([
+            new MiniCssExtractPlugin({
+                filename: "[name].[contenthash].css",
+                chunkFilename: "[id].[contenthash].css"
+            }),
+            new CleanWebpackPlugin([path.resolve(__dirname, '../dist')])
+        ]);
+
+    } else {
+        config.devtool = 'inline-source-map';
+        config.module.rules.push({
+            test: /\.(less|css)$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'less-loader'
+            ],
+            include: [path.resolve(__dirname, '../src')],
+        });
+        config.plugins.push(new webpack.HotModuleReplacementPlugin());
+        config.devServer = {
+            contentBase: path.resolve(__dirname, "../dist"),
+            compress: true,
+            port: 8080,
+            host: '127.0.0.1',
+        };
+    }
+    return config;
 };
