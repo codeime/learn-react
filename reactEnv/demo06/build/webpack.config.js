@@ -36,6 +36,7 @@ let config = {
         path: path.resolve(__dirname, '../dist')
     },
     resolve: {
+        extensions: ['.js', '.jsx', '.json'],
         alias: { "@": path.resolve(__dirname, '../src') }
     },
     module: {
@@ -116,6 +117,7 @@ module.exports = (env, argv) => {
             contentBase: path.resolve(__dirname, "../dist"),
             compress: true,
             port: 8080,
+            hot: true,
             host: '127.0.0.1',
         };
     }

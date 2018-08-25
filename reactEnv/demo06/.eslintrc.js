@@ -64,6 +64,7 @@ module.exports = {
         'eol-last': 0,
         /* 分号 */
         /*  "semi": 1 */
+        'no-console': 0
 
     },
     settings: {
