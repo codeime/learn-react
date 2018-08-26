@@ -13,7 +13,7 @@ class ToDo extends React.Component {
         return (
             <div>
                 <Input commitFun={this.addToDo.bind(this)}></Input>
-                <List list={this.state.todoList} removeFun={this.removeToDo.bind}></List>
+                <List list={this.state.todoList} removeFun={this.removeToDo.bind(this)}></List>
             </div>
         );
     }
@@ -24,8 +24,9 @@ class ToDo extends React.Component {
         })
     }
     removeToDo(id) {
+        let list = this.state.todoList;
         this.setState({
-            todoList: this.state.todoList.filter(item => item.id !== id)
+            todoList: list.filter(item => item.id !== id)
         })
     }
 }
