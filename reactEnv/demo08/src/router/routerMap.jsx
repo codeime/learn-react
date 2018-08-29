@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import { HashRouter as Router, Redirect, Switch, Route } from 'react-router-dom';
 
 import App from '@/page/app';
 import Home from '@/page/Home/index';
@@ -7,25 +7,25 @@ import List from '@/page/List/index';
 import Detail from '@/page/Detail/index';
 import NotFound from '@/page/NotFound/index';
 class RouterMap extends React.Component {
-    updateHandle() {
-        console.log('路由更新了');
-        /* 可以统计pv */
-    }
     render() {
         return (
-            <Router
-                history={this.props.history}
-                onUpdate={this.updateHandle.bind(this)}>
-                <Route>
-                    <IndexRoute path="/" component={App} />
-                    <Route path="home" component={Home} />
-                    <Route path="list" component={List} />
-                    <Route path="detail/:id" component={Detail} />
-                    <Route path="*" component={NotFound} />
-                </Route>
+            <Router>
+                <App >
+                    <Switch>
+                        <Redirect from="/" to="/home" exact />
+                        <Route path="/home" exact component={Home} />
+                        <Route path="/list" exact component={List} />
+                        <Route path="/detail/:id" exact component={Detail} />
+                        <Route path="*" component={NotFound} />
+                    </Switch>
+                </App>
             </Router>
         );
     }
+    componentDidMount() {
+        console.log('路由更新了');
+    }
+
 }
 
 export default RouterMap;
