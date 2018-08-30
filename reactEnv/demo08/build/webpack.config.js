@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const SizePlugin = require('size-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /*
@@ -73,7 +74,8 @@ let config = {
     plugins: [
         new htmlWebpackPlugin({
             template: path.resolve(__dirname, '../index.html')
-        })
+        }),
+        new SizePlugin()
     ],
 
 };
