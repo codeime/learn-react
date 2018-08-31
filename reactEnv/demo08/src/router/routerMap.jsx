@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Redirect, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Switch, Route } from 'react-router-dom';
 
 import App from '@/page/app';
 import Home from '@/page/Home/index';
@@ -9,7 +9,7 @@ import NotFound from '@/page/NotFound/index';
 class RouterMap extends React.Component {
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <App >
                     <Switch>
                         <Redirect from="/" to="/home" exact />
@@ -19,7 +19,7 @@ class RouterMap extends React.Component {
                         <Route path="*" component={NotFound} />
                     </Switch>
                 </App>
-            </Router>
+            </BrowserRouter>
         );
     }
     componentDidMount() {

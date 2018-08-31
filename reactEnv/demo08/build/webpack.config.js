@@ -116,6 +116,7 @@ module.exports = (env, argv) => {
         });
         config.plugins.push(new webpack.HotModuleReplacementPlugin());
         config.devServer = {
+            historyApiFallback: true,
             contentBase: path.resolve(__dirname, "../dist"),
             compress: true,
             port: 8080,
