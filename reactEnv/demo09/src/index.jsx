@@ -12,8 +12,8 @@ import '@/static/style/common.less';
 import RouterMap from './router/routerMap';
 /* import fn from "./reducers/redux-demo";
 fn(); */
-import configureStore from './store/configureStore'
-const store = configureStore()
+import Store from './store/index'
+const store = Store();
 
 render(
     <Provider store={store}>

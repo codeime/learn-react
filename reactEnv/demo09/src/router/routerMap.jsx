@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as userinfoActions from '../actions/userInfo';
+import * as userinfoActions from '../store/actions/userInfo';
 
 import App from '@/page/app';
 import Home from '@/page/Home/index';
