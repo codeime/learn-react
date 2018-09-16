@@ -116,6 +116,12 @@ module.exports = (env, argv) => {
         });
         config.plugins.push(new webpack.HotModuleReplacementPlugin());
         config.devServer = {
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3000',
+                    secure: false
+                }
+            },
             historyApiFallback: true,
             contentBase: path.resolve(__dirname, "../dist"),
             compress: true,
