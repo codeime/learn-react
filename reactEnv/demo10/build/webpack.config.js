@@ -45,6 +45,13 @@ let config = {
             test: /\.(js|jsx)$/,
             include: [path.resolve(__dirname, '../src')],
             loader: 'babel-loader'
+        }, {
+            test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+            include: [path.resolve(__dirname, '../src')],
+            loader: 'url-loader',
+            options: {
+                limit: 5000
+            }
         }]
     },
     optimization: {
