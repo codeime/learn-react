@@ -26,35 +26,35 @@ class Category extends React.Component {
                     <div>
                         <ul className="itemBox clearfix">
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-ktv"></i>
                                 <span className="text">KTV</span>
                             </li>
                         </ul>
@@ -62,35 +62,35 @@ class Category extends React.Component {
                     <div>
                         <ul className="itemBox clearfix">
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-jiazheng"></i>
                                 <span className="text">家政</span>
                             </li>
                         </ul>
@@ -98,35 +98,35 @@ class Category extends React.Component {
                     <div>
                         <ul className="itemBox clearfix">
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                             <li className='item'>
-                                <i className="iconfont"></i>
+                                <i className="iconfont icon-spa"></i>
                                 <span className='text'>按摩</span>
                             </li>
                         </ul>
