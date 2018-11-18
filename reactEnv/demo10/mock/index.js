@@ -2,13 +2,24 @@ const Koa = require('koa');
 const router = require('koa-router')();
 const koaBody = require('koa-body');
 const app = new Koa();
-
+const path = require('path');
 
 router.get('/', function(next) {
     this.body = 'hello koa !'
 });
 
-router.get('/api', function(next) {
+const ad = require('./home/ad')
+router.get('/api/homead', (ctx, next) => {
+    ctx.body = ad
+})
+
+const list = require('./home/list')
+router.get('/api/homelist/:city/:page', (ctx, next) => {
+    let { city, page } = ctx.params
+    console.log(city + ":" + page);
+    ctx.body = list
+})
+/* router.get('/api', function(next) {
     this.body = 'test data'
 });
 router.get('/api/1', function(next) {
@@ -19,7 +30,7 @@ router.get('/api/2', function(next) {
         a: 1,
         b: '123'
     }
-});
+}); */
 app.use(koaBody({
     multipart: true, // 支持文件上传
     encoding: 'gzip',

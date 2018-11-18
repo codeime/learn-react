@@ -1,17 +1,18 @@
 import React from 'react';
-import HomeHeader from '@/components/HomeHeader'
-import Category from '@/components/Category'
 import { connect } from 'react-redux'
 
+import HomeHeader from '@/components/HomeHeader'
+import Category from '@/components/Category'
+import Ad from './Com/Ad'
+import List from './Com/List'
 class Home extends React.Component {
     render() {
         return (
             <div>
-                <HomeHeader
-                    cityName={this.props.userInfo.cityName}>
-                </HomeHeader>
+                <HomeHeader cityName={this.props.userInfo.cityName}></HomeHeader>
                 <Category></Category>
-                home页
+                <Ad></Ad>
+                <List cityName={this.props.userInfo.cityName}></List>
             </div>
         );
     }
