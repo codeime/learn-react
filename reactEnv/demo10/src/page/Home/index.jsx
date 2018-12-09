@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-
+import PropTypes from "prop-types";
 import HomeHeader from '@/components/HomeHeader'
 import Category from '@/components/Category'
 import Ad from './Com/Ad'
@@ -17,15 +17,16 @@ class Home extends React.Component {
         );
     }
 }
+Home.propTypes = {
+    userInfo: PropTypes.object
+}
 function mapStateToProps(state) {
     return {
         userInfo: state.userInfo
     }
 }
-function mapDispatchToProps(dispatch) {
-    return {}
-}
+
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(Home);

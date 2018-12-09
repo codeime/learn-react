@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { getListData } from '@/fetch/home'
 class List extends React.Component {
     constructor(props, context) {
@@ -40,6 +41,9 @@ class List extends React.Component {
                 })
             })
     }
+}
+List.propTypes = {
+    cityName: PropTypes.string
 }
 
 export default List;
