@@ -6,6 +6,9 @@ import Category from '@/components/Category'
 import Ad from './Com/Ad'
 import List from './Com/List'
 class Home extends React.Component {
+    static propTypes = {
+        userInfo: PropTypes.object
+    }
     render() {
         return (
             <div>
@@ -16,9 +19,6 @@ class Home extends React.Component {
             </div>
         );
     }
-}
-Home.propTypes = {
-    userInfo: PropTypes.object
 }
 function mapStateToProps(state) {
     return {

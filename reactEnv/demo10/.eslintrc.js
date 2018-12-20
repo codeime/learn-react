@@ -22,7 +22,7 @@ module.exports = {
         sourceType: "module",
         ecmaVersion: 7
     },
-
+    parser: 'babel-eslint',
     plugins: ["react"],
     // add your custom rules here
     rules: {

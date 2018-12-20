@@ -1,6 +1,9 @@
 import React from 'react';
-
+import PropTypes from 'prop-types'
 class Detail extends React.Component {
+    static propTypes = {
+        match: PropTypes.object
+    }
     constructor(props, context) {
         super(props, context)
     }

@@ -6,6 +6,10 @@ import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
 import * as userInfoActions from '@/store/actions/userInfo'
 class App extends React.Component {
+    static propTypes = {
+        children: PropTypes.element,
+        userInfoActions: PropTypes.object
+    }
     constructor(props, context) {
         super(props, context)
         this.state = {
@@ -40,11 +44,6 @@ class App extends React.Component {
         }, 1000);
     }
 }
-App.propTypes = {
-    children: PropTypes.element,
-    userInfoActions: PropTypes.object
-}
-
 function mapDispatchToProps(dispatch) {
     return {
         userInfoActions: bindActionCreators(userInfoActions, dispatch)
